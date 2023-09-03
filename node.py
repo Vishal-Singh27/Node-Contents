@@ -34,9 +34,6 @@ def main():
     node = node.ahead
     node.content = "Pushti"
     
-    # # Going back node
-    # node = node.back
-    
     # Printing current node's content
     print(node.start)
     
