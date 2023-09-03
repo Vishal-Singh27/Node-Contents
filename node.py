@@ -1,21 +1,45 @@
-class Node():
+class Node:
+    # Initializing the node
     def __init__(self):
         self.back = None
         self.content = None
-        self.ahead = None
+        self.start = self
         
-    def create_node(self):
+    # Instance method that makes a next node
+    def create_nextnode(self):
         self.ahead = Node()
-        (self.ahead).back = self.ahead
-    
-    def go_back(self):
-        self = self.back
-    
-    def go_ahead(self):
-        self = self.ahead
-    
+        (self.ahead).back = self
+        (self.ahead).start = self.startpoint()
+        
+    # Returns startpoint of the node
     def startpoint(self):
-        tmp = self
-        while not tmp.back:
-            tmp = self.back
-        return tmp
+        while self.back != None:
+            self = self.back
+        return self
+    
+    # If someone tries to print self, it prints the content
+    def __str__(self):
+        return str(self.content)
+    
+    
+def main():
+    # Testing our node initialization
+    node = Node()
+    node.content = "Vishal"
+    
+    # Testing create_nextnode
+    node.create_nextnode()
+    
+    # Going to next node
+    node = node.ahead
+    node.content = "Pushti"
+    
+    # # Going back node
+    # node = node.back
+    
+    # Printing current node's content
+    print(node.start)
+    
+
+if __name__ == "__main__":
+    main()
