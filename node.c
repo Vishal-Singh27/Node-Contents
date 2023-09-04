@@ -4,6 +4,7 @@
 #include <string.h>
 #include <strings.h>
 
+// Type-defining our node.
 typedef struct Node
 {
     struct Node *back;
