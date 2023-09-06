@@ -32,7 +32,7 @@ def main():
     
     # Going to next node
     node = node.ahead
-    node.content = "Pushti"
+    node.content = "Rahul"
     
     # Printing current node's content
     print(node.start)
